@@ -1,0 +1,17 @@
+
+<%= render 'layouts/header' %>
+<%= render 'layouts/topbar' %>
+<%= render 'layouts/bannerad' %>
+<div class="buttonsindex">
+  <div class="row">
+    <% if user_signed_in? %>
+    <%= link_to 'Nieuws toevoegen', new_article_path, :class => "button ala" %>
+    <% end %>
+  <div class="large-6 columns">
+
+  </div>
+  </div>
+</div>
+<br>
+<%= render 'overview' %>
+<%= render 'layouts/footerforms' %>

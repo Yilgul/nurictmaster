@@ -1,0 +1,29 @@
+<%= render 'layouts/header' %>
+
+<div class="sidebarL">
+  <div class="linksidebar">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+<div class="contentlogin">
+
+<h2>Wachtwoord vergeten?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, placeholder: "E-Mail", :class => "formfield" %>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit "Verstuur herstel instructies", :class => "button ala1" %>
+  </div>
+<% end %>
+
+</div>
+
+
+<div class="sidebar">
+</div>
+<%= render 'layouts/footerforms' %>

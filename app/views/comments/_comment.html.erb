@@ -1,0 +1,23 @@
+  <% if comment.persisted? %>
+  <div class="commentsep0">
+    <div class="commentsep">
+     <p><i class="fa fa-user" aria-hidden="true"></i>  <strong><%= comment.commenter %></strong></p>
+    <div class="deletebutton">
+      <% if user_signed_in? %>
+      <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, [comment.article, comment],
+                                     method: :delete,
+                                     data: { confirm: 'Weet u het zeker?'},
+                                     :class => 'button ala' %>
+                                     <% end %>
+                                     
+      </div>
+    </div>
+    <i class="fa fa-commenting" aria-hidden="true"></i>
+    <div class="commentsep1">
+    <p><%= comment.body.html_safe %><br>
+    </div>
+</div>
+
+
+
+<% end %>

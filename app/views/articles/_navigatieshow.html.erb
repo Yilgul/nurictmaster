@@ -1,0 +1,12 @@
+<div class="buttonsrow">
+<div class="row">
+  <div class="large-6 columns ">
+    <%= link_to '<i class="fa fa-list-alt" aria-hidden="true"></i>'.html_safe, {controller: 'articles'}, :class => 'button ala' %>
+    <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i>'.html_safe, new_article_path, :class => 'button ala' %>
+    <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_article_path(@article), :class => 'button ala' %>
+    <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, article_path(@article), :class => 'button ala',
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+</div>

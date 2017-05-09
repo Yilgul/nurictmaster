@@ -1,0 +1,15 @@
+
+<div class="overviewbox">
+  <div class="row">
+    <div class="large-12 columns">
+      <h4>Nieuws</h4>
+      <% @articles.each do |article| %>
+      <div class="articlebox">
+        <div class="articleindex">
+          <i class="fa fa-angle-right" aria-hidden="true"></i> <%= link_to article.title, article %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

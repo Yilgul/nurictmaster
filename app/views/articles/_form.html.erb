@@ -1,0 +1,34 @@
+<%= tinymce_assets %>
+<%= form_for @article do |f| %>
+
+  <% if @article.errors.any? %>
+  <div class="alert callout" data-closable="slide-out-right">
+  <div class="error_explanation">
+    <h5><%= pluralize(@article.errors.count, "error") %> voorkomt dat dit artikel opgeslagen kan worden:</h5>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+   <div class="large-12 columns">
+      <p>
+        <%= f.label :title, "Nieuwskop", :class => 'labelbox' %><br>
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :text, "Inhoud", :class => 'labelbox' %><br>
+        <%= f.text_area :text, :class => "tinymce", :rows => 20, :cols => 120  %>
+        <%= tinymce %>
+      </p>
+      <p><%= f.submit 'Klaar!', :class => 'button ala' %> <%= link_to 'Terug', articles_path, :class => "button ala" %></p>
+      <%= f.file_field :image %>
+</div>
+
+<% end %>
