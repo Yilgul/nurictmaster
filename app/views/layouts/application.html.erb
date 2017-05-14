@@ -6,15 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= content_for?(:title) ? yield(:title) : "NUR-ICT" %></title>
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "showbox", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
-
     <%= yield %>
 
+    <script>
+    $(document).ready(function(){
+      setTimeout(function(){
+        $('#notice_wrapper').fadeOut("slow", function() {
+          $(this).remove();
+        })
+      }, 2500);
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+      setTimeout(function(){
+        $('#alert_wrapper').fadeOut("slow", function() {
+          $(this).remove();
+        })
+      }, 2500);
+    });
+    </script>
   </body>
 </html>

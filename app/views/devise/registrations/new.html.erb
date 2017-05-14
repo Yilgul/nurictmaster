@@ -1,36 +1,39 @@
+
+<div class="containerall">
 <%= render 'layouts/header' %>
+<%= render 'layouts/topbar' %>
+  <div class="contentlogin">
+    <div class="columns large-12">
+      <div class="inputpart fade-in">
+        <h2>REGISTRATIE</h2>
 
-<div class="sidebarL">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.text_field :username, autofocus: true, placeholder: 'Gebruikersnaam',:class => "formfield", :style => "width: 300px;" %>
+        </div>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, placeholder: 'E-mail',:class => "formfield" , :style => "width: 300px;" %>
+        </div>
+
+        <br>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Wachtwoord", :class => "formfield", :style => "width: 300px;" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Bevestig uw wachtwoord", :class => "formfield", :style => "width: 300px;" %>
+        </div>
+
+<br>
+          <div class="actions">
+              <%= f.submit "Registreer", :class => "button ala1" %>
+          </div>
+          <% end %>
+
+  <%= image_tag("logos/logologin.png") %>
+
 </div>
-<div class="contentlogin">
-<h2>Registratie</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.text_field :username, autofocus: true, placeholder: 'Gebruikersnaam',:class => "formfield" %>
-  </div>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: 'E-mail',:class => "formfield" %>
-  </div>
-  <br>
-
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "off", placeholder: "Wachtwoord", :class => "formfield" %>
-  </div>
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Bevestig uw wachtwoord", :class => "formfield" %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit "Registreer", :class => "button ala1" %>
-  </div>
-<% end %>
-</div>
-
-
-<div class="sidebar">
-</div>
+      </div>
 <%= render 'layouts/footerforms' %>

@@ -1,7 +1,7 @@
-<% @articles.each do |article| %>
+<% @articles.reverse_each do |article| %>
 <div class="row">
   <div class="large-12 columns">
-    <div class="articleindex">
+    <div class="articleindexshow">
     <i class="fa fa-angle-right" aria-hidden="true"></i> <%= link_to article.title, article %>
     </div>
       <% end %>

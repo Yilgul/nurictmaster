@@ -1,0 +1,11 @@
+  <div class="row">
+    <div class="articlebox ">
+      <% @articles.reverse_each do |article| %>
+      <div class="articlebox">
+        <div class="articleindex">
+          <%= link_to article.title, article %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>

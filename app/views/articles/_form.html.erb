@@ -1,22 +1,14 @@
 <%= tinymce_assets %>
 <%= form_for @article do |f| %>
-
   <% if @article.errors.any? %>
-  <div class="alert callout" data-closable="slide-out-right">
-  <div class="error_explanation">
-    <h5><%= pluralize(@article.errors.count, "error") %> voorkomt dat dit artikel opgeslagen kan worden:</h5>
-    <ul>
+  <div class="notice_wrapper">
+      <%= pluralize(@article.errors.count, "error") %> voorkomt dat dit artikel opgeslagen kan worden:
       <% @article.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
       <% end %>
     </ul>
-  </div>
   <% end %>
-  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-    <span aria-hidden="true">&times;</span>
-  </button>
 </div>
-
    <div class="large-12 columns">
       <p>
         <%= f.label :title, "Nieuwskop", :class => 'labelbox' %><br>

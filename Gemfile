@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3'
+  gem 'pg'
 end
 group :production do
   gem 'pg'
@@ -43,6 +43,7 @@ gem 'bcrypt', '3.1.11', platforms: [:ruby, :x64_mingw]
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'tinymce-rails'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

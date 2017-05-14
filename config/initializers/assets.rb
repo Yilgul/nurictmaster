@@ -4,6 +4,7 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( vendor/modernizr.js )
 Rails.application.config.assets.precompile += %w( showbox.js )
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

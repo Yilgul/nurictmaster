@@ -14,10 +14,10 @@
 //= require jquery_ujs
 //= require foundation
 $(document).foundation();
+//= require tinymce
 //= require turbolinks
 //= require_tree .
-//= require tinymce
-//= require showbox
+
 
 $(function(){ $(document).foundation(); });
 

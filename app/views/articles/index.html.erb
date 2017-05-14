@@ -1,17 +1,14 @@
-
+<div class="pagebackground">
 <%= render 'layouts/header' %>
 <%= render 'layouts/topbar' %>
-<%= render 'layouts/bannerad' %>
-<div class="buttonsindex">
-  <div class="row">
-    <% if user_signed_in? %>
-    <%= link_to 'Nieuws toevoegen', new_article_path, :class => "button ala" %>
-    <% end %>
-  <div class="large-6 columns">
-
+  <div class="contentnews">
+    <%= render 'layouts/bannerad' %>
+      <div class="row">
+        <% if user_signed_in? %>
+              <%= link_to 'Nieuws toevoegen', new_article_path, :class => "button ala" %>
+        <% end %>
+          <%= render 'overview' %>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
-<br>
-<%= render 'overview' %>
-<%= render 'layouts/footerforms' %>
+<%= render 'layouts/footer' %>

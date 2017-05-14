@@ -1,0 +1,43 @@
+<div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top hinge-out-from-bottom">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Site Title</li>
+      <li>
+        <a href="#">One</a>
+        <ul class="menu vertical">
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="top-bar">
+  <div class="row">
+  <div class="top-bar-left">
+    <div class="logotopbar hide-for-small-only">
+      <%= image_tag("logos/logo.png") %>
+    </div>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu ">
+      <li><%= link_to "Home", controller:'/welcome' %></li> <li>|</li>
+      <li><%= link_to 'pchulp',   static_pages_pchulp_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'webdesign',  static_pages_webdesign_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'schermreparatie',  static_pages_schermreparatie_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'datarecovery',   static_pages_datarecovery_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'Nieuws', controller: '/articles' %></li>
+    </ul>
+  </div>
+  </div>
+</div>

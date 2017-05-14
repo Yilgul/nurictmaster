@@ -1,18 +1,62 @@
-<div class="top-bar fixed">
+ <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">Menu</div>
+  <div class="title-bar-title-right">
+    <ul class="top-list-right">
+      <% if user_signed_in? %>
+        <strong><i class="fa fa-sign-in" aria-hidden="true"></i> <%= current_user.username %></strong>
+        <div class="show-for-medium">
+          <i class="fa fa-cogs" aria-hidden="true"></i> <%= link_to 'Instellingen', edit_user_registration_path, :class => 'navbar-link' %> |
+        </div>
+        <i class="fa fa-sign-out" aria-hidden="true"></i> <%= link_to "Uitloggen", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <i class="fa fa-sign-in" aria-hidden="true"></i><%= link_to "Klanten Login", new_user_session_path, :class => 'navbar-link'  %>
+        <i class="fa fa-sign-in" aria-hidden="true"></i><%= link_to "Registratie", new_user_registration_path, :class => 'navbar-link' %>
+      <% end %>
+    </ul>
+
+
+
+  </div>
+</div>
+
+<div class="top-bar hide-for-medium" id="example-animated-menu" data-animate="scale-in-up fade-out">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li><%= image_tag("logos/logo.png") %></li>
+      <li><%= link_to "Home", controller:'/welcome' %></li> <li>|</li>
+      <li>
+        <a href="#">reparaties</a>
+        <ul class="menu vertical">
+          <li><%= link_to 'pchulp',   static_pages_pchulp_path, :class => 'navbar-link' %></li>
+          <li><%= link_to 'schermreparatie',  static_pages_schermreparatie_path, :class => 'navbar-link' %></li>
+          <li><%= link_to 'datarecovery',   static_pages_datarecovery_path, :class => 'navbar-link' %></li>
+        </ul>
+      </li>
+      <li><%= link_to 'webdesign',  static_pages_webdesign_path, :class => 'navbar-link' %></li>
+      <li><%= link_to 'Nieuws', controller: '/articles' %></li>
+
+
+    </ul>
+  </div>
+</div>
+
+
+<div class="top-bar show-for-medium">
   <div class="row">
   <div class="top-bar-left">
-    <div class="logotopbar">
+    <div class="logotopbar hide-for-small-only">
       <%= image_tag("logos/logo.png") %>
     </div>
   </div>
   <div class="top-bar-right">
-    <ul class="menu">
-      <li><%= link_to "Home", controller:'welcome' %></li> <li>|</li>
-      <li><%= link_to 'Nieuws', controller: 'articles' %></li><li>|</li>
-      <li><a href="wdes.html">Webdesign</a></li><li>|</li>
-      <li><a href="support.html">schermreparatie</a></li><li>|</li>
-      <li><a href="datarec.html">Data recovery</a></li><li>|</li>
-      <li><a href="support.html">pc hulp</a></li>
+    <ul class="menu ">
+      <li><%= link_to "Home", controller:'/welcome' %></li> <li>|</li>
+      <li><%= link_to 'pchulp',   static_pages_pchulp_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'webdesign',  static_pages_webdesign_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'schermreparatie',  static_pages_schermreparatie_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'datarecovery',   static_pages_datarecovery_path, :class => 'navbar-link' %></li><li>|</li>
+      <li><%= link_to 'Nieuws', controller: '/articles' %></li>
     </ul>
   </div>
   </div>

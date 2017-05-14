@@ -1,5 +1,15 @@
+<% if notice %>
+  <div id="notice_wrapper">
+    <p class="notice"><%= notice %></p>
+  </div>
+<% elsif alert %>
+  <div id="alert_wrapper">
+    <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
 
-  <div class="top-nav">
+
+  <div class="top-nav hide-for-small-only">
   <div class="row">
     <div class="column large-6 medium-6">
       <ul class="top-list">
@@ -24,21 +34,3 @@
   </div>
 </div>
 </div>
-
-
-<% if notice %>
-<div class="row1">
-  <div class="notice">
-    <%= notice %>
-  </div>
-  </div>
-<% end %>
-<% if alert %>
-<div class="row">
-  <div class="row1">
-  <div class="alert">
-    <%= alert %>
-  </div>
-</div>
-</div>
-<% end %>
