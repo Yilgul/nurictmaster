@@ -27,8 +27,10 @@ class ArticlesController < ApplicationController
 
     if @article.save
       redirect_to @article
+      flash[:notice] = "Nieuwsbericht toegevoegd"
     else
       render 'new'
+      flash[:alert] = "Sorry"
     end
   end
 
@@ -36,8 +38,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to @article
+      flash[:notice] = "Update nieuwsbericht succesvol"
     else
       render 'edit'
+      flash[:alert] = "Sorry"
     end
   end
 
@@ -45,6 +49,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
+    flash[:notice] = "Nieuwsbericht verwijderd"
   end
 
   private

@@ -2,17 +2,19 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
 
 <!--div class="commentsview"> -->
-      <%= f.text_field :commenter, placeholder: "Gebruikersnaam" %>
+      <div class="commentshead">
+      <strong><i class="fa fa-user" aria-hidden="true"></i> <%= current_user.username %></strong>
+      </div>
       <%= f.label :body, 'Uw reactie:', :class => "commentshead" %><br>
       <%= f.text_area :body, :class => "", :rows => 10, :cols => 20  %>
       <%= tinymce %>
 
     <div class="notice_wrapper">
       <% if flash[:succes] %>
-      <div class="notice"><span class="label success"><i class="fa fa-check" aria-hidden="true"> </i><%= flash[:succes] %></span></div>
+      <i class="fa fa-check" aria-hidden="true"> </i><%= flash[:succes] %>
         <% end %>
       <% if flash[:error] %>
-        <div class="notice_wrapper"><span class="label alert"><i class="fa fa-exclamation" aria-hidden="true"> </i><%= flash[:error] %></span></div>
+        <div class="alert_wrapper"><span class="label alert"><i class="fa fa-exclamation" aria-hidden="true"> </i><%= flash[:error] %></span></div>
       <% end %>
     </div>
         <p>

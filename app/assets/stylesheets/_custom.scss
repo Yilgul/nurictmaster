@@ -63,6 +63,29 @@ body{
   }
 }
 
+#succes_wrapper{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  background: rgba(216, 2, 2, .5);
+  border-bottom: 2px $secondary solid;
+
+  .alert, .notice{
+    padding: 0.75rem 0;
+    text-align: center;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+  }
+
+  p{
+    padding: 5px;
+  }
+}
+
 .title-bar{
   background: rgba(159, 179, 201, 0);
   color: black;
@@ -733,8 +756,6 @@ span{
   p{
     padding-left: 5px;
   }
-
-
 }
 
 .commentsep1{
@@ -904,4 +925,22 @@ position: relative;
 
 .formfield:hover {
   border-color: $secondary;
+}
+
+.userinfodeep{
+  padding-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  margin-left: 60px;
+  border: 1px $secondary solid;
+  border-radius: 5px;
+  background: rgba(98, 98, 96, 0.5);
+  width: 100%;
+  margin: 1em;
+
+  p{
+    margin: 1px;
+    color: $primary;
+    font-size: bolder;
+  }
+
 }

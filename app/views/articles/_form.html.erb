@@ -2,11 +2,9 @@
 <%= form_for @article do |f| %>
   <% if @article.errors.any? %>
   <div class="notice_wrapper">
-      <%= pluralize(@article.errors.count, "error") %> voorkomt dat dit artikel opgeslagen kan worden:
       <% @article.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
       <% end %>
-    </ul>
   <% end %>
 </div>
    <div class="large-12 columns">

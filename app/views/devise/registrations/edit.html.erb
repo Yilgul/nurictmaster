@@ -1,15 +1,25 @@
 <div class="containerall">
 <%= render 'layouts/header' %>
 <%= render 'layouts/topbar' %>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="contentlogin">
+      <h2>Wijzig <%= resource_name.to_s.humanize %></h2>
+   </div>
+  </div>
+</div>
+
   <div class="row">
     <div class="contentlogin">
-      <div class="large-2 small-12 columns">
-      <p><%= button_to "Verwijder mijn account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "button ala2" %>
-      <%= link_to "Terug", :back, :class => 'button ala1' %>
-    </div>
-      <div class="columns large-10">
+      <div class="large-3 small-12 columns">
         <div class="inputpart">
-              <h2>Wijzig <%= resource_name.to_s.humanize %></h2>
+          <p><%= button_to "Verwijder mijn account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "button ala2" %>
+          <%= link_to "Terug", :back, :class => 'button ala1' %>
+        </div>
+    </div>
+      <div class="columns large-6">
+        <div class="inputpart">
+
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                 <%= devise_error_messages! %>
 
@@ -41,14 +51,23 @@
                   <%= f.submit "Update", :class => "button ala1" %>
                 </div>
               <% end %>
-
-
               </div>
+            </div>
+            <div class="large-3 small-12 columns">
+              <div class="inputpart">
+                <div class="userinfodeep">
+                  <p>Username:</p><%= current_user.username %>
+                </div>
+                <div class="userinfodeep">
+                  <p>Sign-in IP:</p><%= current_user.current_sign_in_ip %>
+                </div>
+                <div class="userinfodeep">
+                  <p>Last Sign-in IP:</p><%= current_user.last_sign_in_ip %>
+                </div>
+              </div>
+          </div>
+  </div>
+  </div>
+  </div>
 
-
-</div>
-</div>
-</div>
-</div>
-
-<%= render 'layouts/footerforms' %>
+<%= render 'layouts/footer' %>
